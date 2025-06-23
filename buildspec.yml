@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 14 # Optional; only if you plan to use npm tools like minifiers
     commands:
       - echo "Installing dependencies (if any)..."
 
@@ -15,7 +13,6 @@ phases:
     commands:
       - echo "Build started on `date`"
       - echo "Running build steps for static website (if any)..."
-      # Example: Minify HTML/CSS using a tool like clean-css-cli or html-minifier (optional)
 
   post_build:
     commands:
@@ -25,4 +22,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'public' # Change this to your build output directory or root folder if applicable
+  base-directory: '.'  # Use '.' if files are in root
